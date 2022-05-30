@@ -14,6 +14,9 @@ import json
 # Utility
 import random
 
+#gs
+from google.cloud import storage
+
 # DBScan parameters
 EPSILON = 200 # meter
 MIN_POINTS = 3 # minimum locations/points for core
@@ -22,9 +25,9 @@ MIN_POINTS = 3 # minimum locations/points for core
 ANGLE_TO_METER_RATIO = 0.00001 / 1.11 # source : https://www.usna.edu/Users/oceano/pguth/md_help/html/approx_equivalents.htm
 
 # Files
-dataset_file = "./dataset/crime_history.csv"
-model_file = "./model/clustering.json"
-statistic_file = "./model/area_statistic.json"
+dataset_file = "gs://safe_route/crime_history.csv"
+model_file = "gs://safe_route/model/clustering.json"
+statistic_file = "gs://safe_route/model/area_statistic.json"
 
 # Open dataset
 data = pd.read_csv(dataset_file)
